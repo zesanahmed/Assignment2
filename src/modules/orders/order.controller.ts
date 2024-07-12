@@ -25,6 +25,7 @@ const getAllOrder = async (req: Request, res: Response) => {
     });
   } catch (err) {
     console.log(err);
+    res.status(500).json({ success: false, message: "Order not found" });
   }
 };
 
@@ -39,7 +40,7 @@ const searchOrders = async (req: Request, res: Response) => {
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ success: false, message: "Server error" });
+    res.status(500).json({ success: false, message: "Order not found" });
   }
 };
 
